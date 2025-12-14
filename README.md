@@ -1,12 +1,14 @@
 ---
 title: Task management API Backend
-emoji: ,🚀  
+emoji: 🚀
 colorFrom: blue
 colorTo: green
 sdk: docker
 app_file: backend/app/main.py
 pinned: false
 ---
+
+
 # Hackathon Todo
 
 A project-based task management system with AI chat integration, built using Spec-Driven Development (SDD).
