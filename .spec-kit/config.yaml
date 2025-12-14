@@ -1,0 +1,141 @@
+# Specify your project and phases for Spec-Kit / SpecifyPlus
+schema_version: "1.0"
+name: hackathon-todo
+version: "1.0"
+description: "Spec-driven monorepo configuration for the Todo hackathon"
+
+repository:
+  name: "hackathon-todo"
+  owner: "your-github-org-or-user"    # optional, used when tools push changes
+
+structure:
+ specs_dir: specs
+  features_dir: specs/features
+  api_dir: specs/api
+  database_dir: specs/database
+  ui_dir: specs/ui
+  infra_dir: specs/infra
+  claude_files:
+    root: CLAUDE.md
+    frontend: frontend/CLAUDE.md
+    backend: backend/CLAUDE.md
+
+phases:
+  - name: phase2-web
+    description: "Full-stack Todo web app with BetterAuth + Next.js"
+    features:
+      - project-crud
+      - task-crud
+      - authentication
+      - todo-web-ui
+      - graphql-api
+
+  - name: phase3-chatbot
+    description: "AI Todo Chatbot using ChatKit + MCP + Agents SDK"
+    features:
+      - task-crud
+      - authentication
+      - todo-web-ui
+      - graphql-api
+      - todo-ai-chatbot
+      - mcp-tools
+      - jsonrpc-streaming
+
+  - name: phase4-local
+    description: "Local-first dev: run everything locally with env and docker; no Kubernetes"
+    features:
+      - project-crud
+      - task-crud
+      - authentication
+      - todo-web-ui
+      - graphql-api
+      - todo-ai-chatbot
+      - mcp-tools
+      - jsonrpc-streaming
+      - kafka-events-local
+      - dapr-integration-optional
+      - local-dev-scripts
+
+  - name: phase5-cloud-native
+    description: "Cloud-native infra: Kubernetes, Helm, Dapr, Redpanda Cloud, Gordon, kubectl-ai, Kagent"
+    features:
+      - cloud-native-deployment
+      - helm-charts
+      - redpanda-kafka
+      - dapr-integration
+      - kubernetes-automation
+      - observability
+
+templates:
+  feature_template: .spec-kit/templates/feature.md
+  api_template: .spec-kit/templates/api.md
+
+validation:
+  require_feature_files: true
+  allowed_spec_ext: [".md", ".yaml", ".yml"]
+
+# Additional spec-kit-plus configuration options
+options:
+  watch: true
+  verbose: false
+  cache: true
+  max_concurrent_workers: 4
+
+# Development server configuration
+dev_server:
+  port: 3000
+  host: "localhost"
+  hot_reload: true
+
+# Build configuration
+build:
+  output_path: "./dist"
+  minify: true
+  sourcemaps: true
+
+# Testing configuration
+test:
+  runner: "jest"
+  specs: "./specs/**/*test.{js,ts}"
+  coverage:
+    enabled: true
+    threshold:
+      statements: 80
+      branches: 70
+      functions: 80
+      lines: 80
+
+# AI Agent configuration for spec-kit-plus
+ai_agent:
+  default: "claude"  # Default AI agent to use (claude, gemini, copilot, etc.)
+  features:
+    auto_generate_docs: true
+    auto_generate_tests: true
+    code_review_enabled: true
+
+# Task management configuration
+task_management:
+  auto_assign: true
+  priority_levels: ["low", "medium", "high", "critical"]
+  status_tracking:
+    enabled: true
+    file_path: ".spec-kit/tasks/status.json"
+
+# Security and compliance
+security:
+  enforce_https: true
+  code_signing: false
+  dependency_check: true
+
+# Environment configuration
+environments:
+  development:
+    enabled: true
+    auto_deploy: false
+  staging:
+    enabled: false
+    auto_deploy: false
+  production:
+    enabled: false
+    auto_deploy: false
+    requires_approval: true

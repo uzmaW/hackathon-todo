@@ -1,0 +1,73 @@
+# Python
+**/__pycache__
+**/*.py[cod]
+**/*$py.class
+**/*.so
+.Python
+**/bk_env/
+**/env/
+**/venv/
+**/ENV/
+
+# Git
+.git/
+.gitignore
+**/.gitattributes
+
+# IDEs & Editors
+.vscode/
+.idea/
+**/*.swp
+**/*.swo
+**/*~
+
+# Documentation
+*.md
+README*
+**/docs/
+CHANGELOG*
+LICENSE
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Docker
+**/Dockerfile*
+**/docker-compose*.yml
+**/.dockerignore
+
+# Development files
+.env.example
+.env.local
+.env.development
+**/tests/
+**/*.test.py
+**/scripts/
+
+# Frontend (if exists)
+frontend/
+**/node_modules/
+**/.next/
+
+# Temporary & cache
+**/*.log
+**/*.tmp
+**/tmp/
+**/temp/
+.DS_Store
+Thumbs.db
+**/.pytest_cache/
+**/.coverage
+**/htmlcov/
+
+# Build artifacts
+**/dist/
+**/build/
+**/*.egg-info/
+
+# Backend specific excludes
+backend/.env.local
+backend/.env.development
+backend/r2.txt
+backend/requirements*.txt.backup

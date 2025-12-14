@@ -1,0 +1,68 @@
+.claude/
+.qodo/
+.specify/
+# Backend
+pycache/
+*.py[cod]
+*$py.class
+
+backend/venv/
+backend/bk_env/
+backend/__pycache__
+backend/*.pyc
+backend/*.pyo
+backend/*.egg-info/
+backend/.env
+backend/.env.local
+backend/backend.log
+backend/backend.pid
+backend/frontend.pid
+backend/.DS_Store
+./backend/*.sqlite3
+.pyc
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.docusaurus/
+frontend/.env.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.DS_Store
+frontend/dist/
+frontend/.next/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Python virtual environments
+hvenv/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.env.production.local
+.qodo/
+.specify/
+*.pdf
+
+# Excluded folders
+pdf_source/
+docusaurus-integration/
+book_template/
+.vercel
+
+# Files with secrets (keep locally, don't commit)
+GITHUB_ACTIONS_SETUP.md
+RENDER_FREE_DEPLOYMENT.md
+*.env
+.env*

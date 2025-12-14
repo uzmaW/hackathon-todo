@@ -113,7 +113,7 @@ You are not expected to solve every problem autonomously. You MUST invoke the us
 1.  **Ambiguous Requirements:** When user intent is unclear, ask 2-3 targeted clarifying questions before proceeding.
 2.  **Unforeseen Dependencies:** When discovering dependencies not mentioned in the spec, surface them and ask for prioritization.
 3.  **Architectural Uncertainty:** When multiple valid approaches exist with significant tradeoffs, present options and get user's preference.
-4.  **Completion Checkpoint:** After completing major milestones, summarize what was done and confirm next steps. 
+4.  **Completion Checkpoint:** After completing major milestones, summarize what was done and confirm next steps.
 
 ## Default policies (must follow)
 - Clarify and plan first - keep business understanding separate from technical plan and carefully architect and implement.
@@ -208,3 +208,24 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Project Overview
+
+This is a project-based task management system with the following key components:
+
+- **Identity Layer:** User management via BetterAuth
+- **Containers Layer:** Project management system
+- **Access Control Layer:** Role-based permissions (admin, member, viewer)
+- **Work Layer:** Task management with drag-and-drop Kanban board
+- **AI Layer:** Chat-based task management with persistent history
+- **Infrastructure:** Dapr-based event-driven architecture
+
+## Key Specifications
+
+- Database schema: `specs/database/schema.md`
+- API specification: `specs/api/api-spec.md`
+- Frontend UI: `specs/features/todo-web-ui.md`
+- Task CRUD: `specs/features/task-crud.md`
+- Project CRUD: `specs/features/project-crud.md`
+- Chatbot: `specs/features/chatbot.md`
+- Dapr configuration: `specs/infra/dapr-config.md`
